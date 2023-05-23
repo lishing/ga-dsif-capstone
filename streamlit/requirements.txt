@@ -1,0 +1,6 @@
+typing-inspect==0.8.0
+typing_extensions==4.5.0
+openai==0.27.7
+langchain==0.0.176
+pinecone-client==2.2.1
+streamlit==1.22.0
