@@ -37,7 +37,7 @@ def response_section():
     # Generate the response section with temperature
     with st.expander("**RESPONSE**", True):
         st.info(response)
-        st.caption("Temperature: 5.0 (Balanced)")
+        #st.caption("Temperature: 5.0 (Balanced)")
 
 
 # Initiate the submit button status
@@ -118,7 +118,7 @@ if st.button("Submit"):
             response = qa.run(prompt)
             response_section()
             st.session_state.response_msg = response
-            feedback_section()
+            #feedback_section()
     else:
         st.error("You must input a prompt to get started")
 
