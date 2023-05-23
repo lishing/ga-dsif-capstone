@@ -53,8 +53,8 @@ st.set_page_config(page_title="LaunchPad Prototype",
                    page_icon="images/scmp2.png", layout="centered")  # EDIT PAGE TITLE
 
 # Display logo image
-launchpad_icon = "images/scmp2.png"
-st.image(launchpad_icon, width=100)
+#launchpad_icon = "images/scmp2.png"
+#st.image(launchpad_icon, width=100)
 
 # Set up app title
 st.title("China-US Relations Generative QnA")  # EDIT TITLE
