@@ -32,9 +32,9 @@ def response_section():
     st.divider()
     st.subheader("Output")
     # Generate the actual prompt section
-    with st.expander("**ACTUAL PROMPT**", False):
-        st.write(prompt)
-    # Generate the response section with temperature
+    # with st.expander("**ACTUAL PROMPT**", False):
+    #     st.write(prompt)
+    # # Generate the response section with temperature
     with st.expander("**RESPONSE**", True):
         st.info(response)
         #st.caption("Temperature: 5.0 (Balanced)")
@@ -49,7 +49,7 @@ if 'response_msg' not in st.session_state:
     st.session_state.response_msg = ""
 
 # Set Streamlit app theme
-st.set_page_config(page_title="LaunchPad Prototype",
+st.set_page_config(page_title="China-US Relations Prototype",
                    page_icon="images/scmp2.png", layout="centered")  # EDIT PAGE TITLE
 
 # Display logo image
