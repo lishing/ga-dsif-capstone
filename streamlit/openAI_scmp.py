@@ -57,7 +57,7 @@ st.set_page_config(page_title="LaunchPad Prototype",
 #st.image(launchpad_icon, width=100)
 
 # Set up app title
-st.title("China-US Relations Generative QnA")  # EDIT TITLE
+st.title("Generative QnA: China-US Relations")  # EDIT TITLE
 
 # Display disclaimer message
 #st.warning('**This application is in Alpha version**. You should avoid using it for general fact-finding and information retrieval and must never trust the responses completely.')
@@ -65,7 +65,7 @@ st.title("China-US Relations Generative QnA")  # EDIT TITLE
 # Display information section
 with st.expander("**Description**", False):   # EDIT TITLE
     # EDIT DESCRIPTION
-    st.write('Simple Gen QnA on China-US Relations, with SCMP scrapped data from June 2022 - May 2023')
+    st.write('Simple Generative QnA on China-US Relations, with data scrapped from SCMP website (US-China column) from June 2022 - May 2023')
 
 st.divider()
 
