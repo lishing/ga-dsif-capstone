@@ -6,7 +6,7 @@ import pinecone
 from langchain.vectorstores import Pinecone, VectorStore
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
-from langchain.chains import RetrievalQA
+from langchain.chains import RetrievalQA, RetrievalQAWithSourcesChain
 
 # ------------ TEMPLATE HEADER START (EDIT ONLY RELEVANT FIELDS) ------------
 
@@ -102,10 +102,11 @@ llm = ChatOpenAI(
 )
 
 #define qa
-qa = RetrievalQA.from_chain_type(
+qa = RetrievalQAWithSourcesChain.from_chain_type(
     llm=llm,
     chain_type="stuff",
-    retriever=vectorstore.as_retriever() 
+    retriever=vectorstore.as_retriever(),
+    return_source_documents=True
 )
 
 prompt = st.text_area("What would you like to know?", help="free-text input",
@@ -115,10 +116,15 @@ if st.button("Submit"):
     if prompt != "":  # check that prompt isn't empty
     # encode query as sentence vector
         with st.spinner('Generating response...'):
-            response = qa.run(prompt)
-            response_section()
+            #response = qa.run(prompt)
+            response = qa({"question": prompt}, return_only_outputs=True)
+            result = response['result']
+            source_documents = response['source_documents']
+            #response_section(result, source_documents)
+            answer = response['answer']
             st.session_state.response_msg = response
             #feedback_section()
+            st.write(answer)
     else:
         st.error("You must input a prompt to get started")
 
